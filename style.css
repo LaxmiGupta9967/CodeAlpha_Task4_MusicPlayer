@@ -1,0 +1,139 @@
+:root {
+  --primary: #4cafef;
+  --bg: #858ef3;
+  --card: #1e1e1e;
+  --text: #ffffff;
+  --muted: #aaa;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.player {
+  background: var(--card);
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.5);
+  text-align: center;
+  width: 320px;
+}
+
+.song-info h3, .song-info p {
+  margin: 5px 0;
+}
+
+.progress-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 10px 0;
+}
+
+#progress {
+  flex: 1;
+  margin: 0 10px;
+}
+
+.volume-container {
+  margin: 10px 0;
+}
+
+.controls {
+  display: flex;
+  justify-content: space-around;
+  margin: 15px 0;
+}
+
+.icon {
+  background: none;
+  border: 2px solid var(--primary);
+  border-radius: 50%;
+  padding: 10px;
+  font-size: 18px;
+  cursor: pointer;
+  color: var(--text);
+  transition: 0.3s;
+}
+
+.icon:hover {
+  background: var(--primary);
+  color: #000;
+}
+
+.primary {
+  font-size: 22px;
+}
+
+/* Mode status line */
+.mode-status {
+  font-size: 15px;
+  margin-top: -6px;
+  margin-bottom: 8px;
+  text-align: center;
+  font-weight: 500;
+}
+
+.mode-status span {
+  padding: 2px 6px;
+  border-radius: 8px;
+  margin-left: 4px;
+  font-weight: bold;
+}
+
+/* Colors for modes */
+.mode-normal { color: var(--muted); }
+.mode-autoplay { color: #4cafef; text-shadow: 0 0 6px #4cafef66; }
+.mode-shuffle { color: #ffb74d; text-shadow: 0 0 6px #ffb74d66; }
+.mode-repeat-all { color: #81c784; text-shadow: 0 0 6px #81c78466; }
+.mode-repeat-one { color: #e57373; text-shadow: 0 0 6px #e5737366; }
+
+/* Active button glow */
+.icon.active-shuffle {
+  color: #ffb74d;
+  box-shadow: 0 0 8px #ffb74d88;
+  border-color: #ffb74d;
+}
+.icon.active-repeat-all {
+  color: #81c784;
+  box-shadow: 0 0 8px #81c78488;
+  border-color: #81c784;
+}
+.icon.active-repeat-one {
+  color: #e57373;
+  box-shadow: 0 0 8px #e5737388;
+  border-color: #e57373;
+}
+
+.extra-controls {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+#playlist {
+  list-style: none;
+  padding: 0;
+  margin-top: 15px;
+  max-height: 120px;
+  overflow-y: auto;
+}
+
+#playlist li {
+  padding: 6px;
+  cursor: pointer;
+  border-bottom: 1px solid #333;
+}
+
+#playlist li.active {
+  background: var(--primary);
+  color: #000;
+  font-weight: bold;
+}
